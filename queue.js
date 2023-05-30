@@ -45,7 +45,10 @@ class Queue {
 
   /** peek(): return the value of the first node in the queue. */
 
-  peek() {}
+  peek() {
+    let firstNode = this.first;
+    return firstNode.val;
+  }
 
   /** isEmpty(): return true if the queue is empty, otherwise false */
 
