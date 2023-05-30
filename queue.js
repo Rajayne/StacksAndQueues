@@ -34,7 +34,14 @@ class Queue {
   /** dequeue(): remove the node from the start of the queue
    * and return its value. Should throw an error if the queue is empty. */
 
-  dequeue() {}
+  dequeue() {
+    try {
+      this.first = this.first.next;
+      return;
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   /** peek(): return the value of the first node in the queue. */
 
