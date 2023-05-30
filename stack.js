@@ -24,17 +24,24 @@ class Stack {
     if (this.first) {
       newNode.next = this.first;
       this.first = newNode;
+      this.size += 1;
       return;
     }
     this.first = newNode;
     this.last = newNode;
+    this.size += 1;
     return;
   }
 
   /** pop(): remove the node from the top of the stack
    * and return its value. Should throw an error if the stack is empty. */
 
-  pop() {}
+  pop() {
+    let firstNode = this.first;
+    this.first = firstNode.next;
+    this.size -= 1;
+    return firstNode.val;
+  }
 
   /** peek(): return the value of the first node in the stack. */
 
