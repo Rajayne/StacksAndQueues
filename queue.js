@@ -24,10 +24,12 @@ class Queue {
     if (this.last === null) {
       this.first = newNode;
       this.last = newNode;
+      this.size += 1;
       return;
     }
     this.last.next = newNode;
     this.last = newNode;
+    this.size += 1;
     return;
   }
 
@@ -36,10 +38,12 @@ class Queue {
 
   dequeue() {
     try {
-      this.first = this.first.next;
-      return;
+      let firstNode = this.first;
+      this.first = firstNode.next;
+      this.size -= 1;
+      return firstNode.val;
     } catch (e) {
-      console.log(e);
+      throw e;
     }
   }
 

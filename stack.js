@@ -45,11 +45,19 @@ class Stack {
 
   /** peek(): return the value of the first node in the stack. */
 
-  peek() {}
+  peek() {
+    let firstNode = this.first;
+    return firstNode.val;
+  }
 
   /** isEmpty(): return true if the stack is empty, otherwise false */
 
-  isEmpty() {}
+  isEmpty() {
+    if (this.size === 0 || !this.first || !this.last) {
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = Stack;
